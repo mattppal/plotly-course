@@ -10,13 +10,15 @@
 #######
 # TASK 1: Import pandas and numpy
 ######
-
+import pandas as pd
+import numpy as np
+from pandas.core.frame import DataFrame
 
 
 #######
 # TASK 2: Set Numpy's random number generator seed to 101
 ######
-
+np.random.seed(seed=101)
 
 
 #######
@@ -25,7 +27,7 @@
 #         limit may be exclusive.)
 ######
 
-
+matrix = np.matrix(np.random.randint(low=0, high=101, size=(100,5)))
 
 #######
 # TASK 4: Now use pd.DataFrame() to read in this numpy array as a dataframe.
@@ -33,6 +35,7 @@
 #         dataframe. Pandas will auto label the columns to 0-4
 ######
 
+df = pd.DataFrame(matrix)
 
 
 #######
@@ -41,7 +44,7 @@
 #         to rename the pandas columns to be ['f1','f2','f3','f4','label'].
 ######
 
-
+df.columns = ['f1', 'f2', 'f3', 'f4', 'label']
 
 #######
 # TASK 6: Alright, all the other tasks were hopefully straightforward.
@@ -52,3 +55,7 @@
 #         between 0 and 100. (Hint: Use numpy to create the numbers, then pass
 #         it in to pd.DataFrame(), check out the data= and index= parameters
 #         for that call.)
+
+matrix_new = np.matrix(np.random.randint(low=0, high=101, size=(50,4)))
+df_new = DataFrame(data=matrix_new, columns=['A', 'B', 'C', 'D'])
+print(df_new.head())
