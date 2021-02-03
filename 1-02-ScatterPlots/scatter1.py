@@ -15,6 +15,20 @@ data = [go.Scatter(
     x = random_x,
     y = random_y,
     mode = 'markers',
+    marker = dict(
+        size=12
+        , color = 'rgb(51,204,153)'
+        , symbol = 'pentagon'
+        , line = {'width':2}
+    ) 
 )]
 
-pyo.plot(data, filename='scatter1.html')
+layout = go.Layout(
+    title = 'Hello First Plot'
+    , xaxis = {'title': 'My X Axis'}
+    , yaxis = {'title': 'My Y Axis'} 
+    , hovermode = 'closest'
+)
+
+fig = go.Figure(data=data, layout=layout)
+pyo.plot(fig, filename='scatter1.html')
