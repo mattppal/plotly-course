@@ -7,7 +7,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 # read a .csv file into a pandas DataFrame:
-df = pd.read_csv('../data/population.csv', index_col=0)
+df = pd.read_csv('./data/population.csv', index_col=0)
 
 # create traces
 traces = [go.Scatter(

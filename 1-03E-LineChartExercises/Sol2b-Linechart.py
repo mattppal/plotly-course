@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 # Create a pandas DataFrame from 2010YumaAZ.csv
-df = pd.read_csv('../data/2010YumaAZ.csv')
+df = pd.read_csv('./data/2010YumaAZ.csv')
 
 # Define a data variable
 data = [{
@@ -23,10 +23,11 @@ data = [{
     'name': day
 } for day in df['DAY'].unique()]
 
+
+
 # Define the layout
 layout = go.Layout(
     title='Daily temperatures from June 1-7, 2010 in Yuma, Arizona',
-    hovermode='closest'
 )
 
 # Create a fig from data and layout, and plot the fig
