@@ -7,24 +7,22 @@
 ######
 
 # Perform imports here:
-
-
-
+import plotly.offline as pyo
+import plotly.figure_factory as ff
+import pandas as pd
 
 # create a DataFrame from the .csv file:
-
-
+df = pd.read_csv('./data/iris.csv')
+classes = df['class'].unique()
+print(df.head())
 
 # Define the traces
 
 # HINT:
 # This grabs the petal_length column for a particular flower
-df[df['class']=='Iris-some-flower-class']['petal_length']
+flower_classes = [flower_class for flower_class in df['class'].unique()]
+data = [df[df['class']==flower_class]['petal_length'] for flower_class in flower_classes]
 
 
-
-# Define a data variable
-
-
-
-# Create a fig from data and layout, and plot the fig
+fig = ff.create_distplot(data, flower_classes)
+pyo.plot(fig, filename='ex7_distplot.html')
