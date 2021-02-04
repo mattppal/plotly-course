@@ -12,7 +12,7 @@
 
 
 # Create a DataFrame from  "flights" data
-df = pd.read_csv('../data/flights.csv')
+df = pd.read_csv('./data/flights.csv')
 
 # Define a data variable
 

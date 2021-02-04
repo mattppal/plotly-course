@@ -10,7 +10,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 # create a DataFrame from the .csv file:
-df = pd.read_csv('../data/abalone.csv')
+df = pd.read_csv('./data/abalone.csv')
 
 # create a data variable:
 data = [go.Histogram(

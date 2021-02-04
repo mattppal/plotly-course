@@ -1,7 +1,7 @@
 #######
 # Objective: Using the iris dataset, develop a Distplot
 # that compares the petal lengths of each class.
-# File: '../data/iris.csv'
+# File: './data/iris.csv'
 # Fields: 'sepal_length','sepal_width','petal_length','petal_width','class'
 # Classes: 'Iris-setosa','Iris-versicolor','Iris-virginica'
 ######
@@ -12,7 +12,7 @@ import plotly.figure_factory as ff
 import pandas as pd
 
 # create a DataFrame from the .csv file:
-df = pd.read_csv('../data/iris.csv')
+df = pd.read_csv('./data/iris.csv')
 
 # Define the traces
 trace0 = df[df['class']=='Iris-setosa']['petal_length']
